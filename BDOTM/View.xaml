@@ -9,7 +9,7 @@
                       EnableDWMDropShadow="True"
                       ResizeMode="CanResizeWithGrip"
                       Icon="favicon.ico"
-                      Title="Black Desert Online Template Manager" 
+                      Title="Black Desert Online Template Manager v1.0" 
                       Height="400" 
                       Width="600">
     <Grid>
