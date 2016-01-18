@@ -6,6 +6,9 @@ using System.IO;
 using System.Linq;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
+using helper.mvvm.commands;
+using System.Diagnostics;
 
 namespace BDOTM
 {
@@ -22,6 +25,13 @@ namespace BDOTM
             PrepareData();
             LoadData();
             preparationComplete = true;
+            OpenFolderCmd = new ActionCommand(() => Process.Start(myDocs));
+        }
+
+        public ICommand OpenFolderCmd
+        {
+            get { return this.Get(x => x.OpenFolderCmd); }
+            private set { this.Set(x => x.OpenFolderCmd, value); }
         }
 
         public ObservableCollection<TemplateItem> Templates
