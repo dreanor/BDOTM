@@ -9,5 +9,7 @@ namespace BDOTM
         ObservableCollection<TemplateItem> Templates { get; set; }
 
         ICommand OpenFolderCmd { get; }
+
+        ICommand ForceReloadCmd { get; }
     }
 }

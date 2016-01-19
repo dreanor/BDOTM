@@ -26,12 +26,25 @@ namespace BDOTM
             LoadData();
             preparationComplete = true;
             OpenFolderCmd = new ActionCommand(() => Process.Start(myDocs));
+            ForceReloadCmd = new ActionCommand(() => 
+            {
+                preparationComplete = false;
+                Templates.Clear();
+                LoadData();
+                preparationComplete = true;
+            });
         }
 
         public ICommand OpenFolderCmd
         {
             get { return this.Get(x => x.OpenFolderCmd); }
             private set { this.Set(x => x.OpenFolderCmd, value); }
+        }
+
+        public ICommand ForceReloadCmd
+        {
+            get { return this.Get(x => x.ForceReloadCmd); }
+            private set { this.Set(x => x.ForceReloadCmd, value); }
         }
 
         public ObservableCollection<TemplateItem> Templates

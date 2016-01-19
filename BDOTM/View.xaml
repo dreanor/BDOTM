@@ -18,6 +18,8 @@
                   AutoGenerateColumns="false">
             <DataGrid.ContextMenu>
                 <ContextMenu>
+                    <MenuItem Command="{Binding Path=ForceReloadCmd}"
+                              Header="Force Reload" />
                     <MenuItem Command="{Binding Path=OpenFolderCmd}"
                               Header="Open Folder" />
                 </ContextMenu>
